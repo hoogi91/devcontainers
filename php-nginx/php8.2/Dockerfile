@@ -11,7 +11,7 @@ RUN apt -y update \
     && echo "apc.enable_cli=1" >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini \
     && echo "apc.use_request_time=0" >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini
 
-COPY ../site.conf /etc/nginx/sites-enabled/default
-COPY ../entrypoint.sh /opt/entrypoint.sh
+COPY site.conf /etc/nginx/sites-enabled/default
+COPY entrypoint.sh /opt/entrypoint.sh
 EXPOSE 80
 CMD ["sh", "/opt/entrypoint.sh"]
