@@ -18,6 +18,18 @@ jobs:
       fail-fast: false
       matrix:
         include:
+          - context: "php-cli/php8.1"
+            tags: ghcr.io/hoogi91/php-cli:8.1
+          - context: "php-cli/php8.2"
+            tags: |
+              ghcr.io/hoogi91/php-cli:8.2
+              ghcr.io/hoogi91/php-cli:latest
+          - context: "php-nginx/php8.1"
+            tags: ghcr.io/hoogi91/php-nginx:8.1
+          - context: "php-nginx/php8.2"
+            tags: |
+              ghcr.io/hoogi91/php-nginx:8.2
+              ghcr.io/hoogi91/php-nginx:latest
           - context: "typo3/php8.1"
             tags: ghcr.io/hoogi91/typo3/php:8.1
           - context: "typo3/php8.2"
