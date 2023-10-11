@@ -6,7 +6,7 @@ FROM dunglas/frankenphp:${PHP_VERSION} AS base
 WORKDIR /var/www/app
 
 # persistent / runtime deps
-RUN apk add --no-cache acl file gettext git;
+RUN apk add --no-cache acl file gettext git; git config --global --add safe.directory /var/www;
 RUN set -eux; install-php-extensions apcu intl opcache pdo_mysql redis zip;
 
 COPY conf.d/app.ini $PHP_INI_DIR/conf.d/
