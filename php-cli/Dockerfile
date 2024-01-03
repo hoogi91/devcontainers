@@ -1,4 +1,5 @@
-FROM php:8.2-cli-bullseye
+ARG PHP_VERSION=8.3-cli-bullseye
+FROM php:${PHP_VERSION}
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN apt -y update && apt -y --no-install-recommends install cron git jq zip wait-for-it ssh \
     && rm -rf /var/lib/apt/lists/* \

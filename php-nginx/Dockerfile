@@ -1,4 +1,5 @@
-FROM php:8.1-fpm-bullseye
+ARG PHP_VERSION=8.3-fpm-bullseye
+FROM php:${PHP_VERSION}
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN apt -y update \
     && apt -y --no-install-recommends install nginx \

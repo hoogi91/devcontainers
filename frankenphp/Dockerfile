@@ -1,6 +1,6 @@
 #syntax=docker/dockerfile:1.4
 # see list on https://hub.docker.com/r/dunglas/frankenphp/tags
-ARG PHP_VERSION=latest-php8.2-alpine
+ARG PHP_VERSION=latest-php8.3-alpine
 FROM dunglas/frankenphp:${PHP_VERSION} AS base
 
 WORKDIR /var/www/app
