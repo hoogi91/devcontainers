@@ -47,15 +47,15 @@ jobs:
               ghcr.io/hoogi91/php-nginx:latest
 
           # TYPO3
-          - context: "typo3/php8.1"
+          - context: "typo3"
             tags: ghcr.io/hoogi91/typo3/php:8.1
             args: |
               PHP_VERSION=8.1-bullseye
-          - context: "typo3/php8.2"
+          - context: "typo3"
             tags: ghcr.io/hoogi91/typo3/php:8.2
             args: |
               PHP_VERSION=8.2-bullseye
-          - context: "typo3/php8.3"
+          - context: "typo3"
             tags: |
               ghcr.io/hoogi91/typo3/php:8.3
               ghcr.io/hoogi91/typo3/php:latest
