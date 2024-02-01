@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "php-nginx/**"
 
 jobs:
   build-and-push:

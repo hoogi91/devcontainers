@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "php-cli/**"
 
 jobs:
   build-and-push:

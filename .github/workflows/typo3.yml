@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "typo3/**"
 
 jobs:
   build-and-push:
