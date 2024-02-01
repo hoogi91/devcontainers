@@ -2,7 +2,7 @@
 set -e
 
 if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
-	if [ ! -d 'vendor/' ]; then
+	if [ -z "$(ls -A 'vendor/' 2>/dev/null)" ]; then
 		composer install --prefer-dist --no-progress --no-interaction
 	fi
 
@@ -11,7 +11,7 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 		ATTEMPTS_LEFT_TO_REACH_DATABASE=60
 		until [ $ATTEMPTS_LEFT_TO_REACH_DATABASE -eq 0 ] || DATABASE_ERROR=$(php bin/console dbal:run-sql -q "SELECT 1" 2>&1); do
 			if [ $? -eq 255 ]; then
-                                # try to recover by creating database
+        # try to recover by creating database
 				php bin/console doctrine:database:create --if-not-exists 2>&1
 			fi
 			sleep 1
