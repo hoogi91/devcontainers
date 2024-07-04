@@ -7,7 +7,7 @@ WORKDIR /var/www/app
 
 # persistent / runtime deps
 RUN apk add --no-cache acl file gettext git; git config --global --add safe.directory /var/www;
-RUN set -eux; install-php-extensions apcu decimal gmagick gmp intl opcache pcntl pdo_mysql redis zip;
+RUN set -eux; install-php-extensions apcu decimal gmagick gmp intl opcache opentelemetry pcntl pdo_mysql redis zip;
 
 COPY conf.d/app.ini $PHP_INI_DIR/conf.d/
 COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint
