@@ -6,7 +6,7 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 		composer install --prefer-dist --no-progress --no-interaction
 	fi
 
-        [ -f 'bin/console' ] && bin/console debug:config doctrine dbal.connections -q
+        [ -f 'bin/console' ] && $(bin/console debug:config doctrine dbal.connections -q >/dev/null 2>&1)
 	if [ $? -eq 0 ]; then
 		echo "Waiting for database to be ready..."
 		ATTEMPTS_LEFT_TO_REACH_DATABASE=60
