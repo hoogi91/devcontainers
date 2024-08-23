@@ -5,9 +5,8 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 	if [ -z "$(ls -A 'vendor/' 2>/dev/null)" ]; then
 		composer install --prefer-dist --no-progress --no-interaction
 	fi
-
-        [ -f 'bin/console' ] && $(bin/console debug:config doctrine dbal.connections -q >/dev/null 2>&1)
-	if [ $? -eq 0 ]; then
+ 
+	if [ -f 'bin/console' ] && $(php bin/console debug:config doctrine dbal.connections -q >/dev/null 2>&1); then
 		echo "Waiting for database to be ready..."
 		ATTEMPTS_LEFT_TO_REACH_DATABASE=60
 		until [ $ATTEMPTS_LEFT_TO_REACH_DATABASE -eq 0 ] || DATABASE_ERROR=$(php bin/console dbal:run-sql -q "SELECT 1" 2>&1); do
