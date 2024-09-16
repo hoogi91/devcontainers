@@ -28,6 +28,10 @@ jobs:
             tags: |
               ghcr.io/hoogi91/php-nginx:8.3
               ghcr.io/hoogi91/php-nginx:latest
+          # add newrelic builds
+          - version: 8.1
+            target: newrelic
+            tags: ghcr.io/hoogi91/php-nginx-newrelic:8.1
 
     steps:
       - name: Checkout
