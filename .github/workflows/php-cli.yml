@@ -31,7 +31,7 @@ jobs:
           # add newrelic builds
           - version: 8.1
             target: newrelic
-            tags: ghcr.io/hoogi91/php-cli-newrelic:8.1
+            tags: ghcr.io/hoogi91/php-cli:8.1-newrelic
 
     steps:
       - name: Checkout
