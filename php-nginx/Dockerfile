@@ -24,5 +24,5 @@ RUN set -eux;  \
     cd /opt/ && curl -s -L https://download.newrelic.com/php_agent/release/${NEWRELIC_FILE} | tar xvz && \
     NR_INSTALL_SILENT=true /opt/${NEWRELIC_FILE%.tar.gz}/newrelic-install install;
 
-# just build base
+# just build base image
 FROM base AS default
