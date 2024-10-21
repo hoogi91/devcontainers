@@ -32,6 +32,9 @@ jobs:
           - version: 8.1
             target: newrelic
             tags: ghcr.io/hoogi91/php-cli:8.1-newrelic
+          - version: 8.3
+            target: newrelic
+            tags: ghcr.io/hoogi91/php-cli:8.3-newrelic
 
     steps:
       - name: Checkout
