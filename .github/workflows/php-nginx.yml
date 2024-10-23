@@ -1,6 +1,7 @@
 name: PHP nginx Build
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 1 * *' # at 00:00 on 1st of month
   push:
