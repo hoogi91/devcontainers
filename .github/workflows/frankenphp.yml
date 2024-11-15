@@ -20,16 +20,16 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: "latest-php8.2"
+          - version: "php8.2"
             target: "base"
             tags: ghcr.io/hoogi91/frankenphp/base:8.2
-          - version: "latest-php8.2"
+          - version: "php8.2"
             tags: ghcr.io/hoogi91/frankenphp/php:8.2
 
-          - version: "latest-php8.3"
+          - version: "php8.3"
             target: "base"
             tags: ghcr.io/hoogi91/frankenphp/base:8.3
-          - version: "latest-php8.3"
+          - version: "php8.3"
             tags: |
               ghcr.io/hoogi91/frankenphp/php:8.3
               ghcr.io/hoogi91/frankenphp/php:latest
