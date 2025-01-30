@@ -34,6 +34,12 @@ jobs:
               ghcr.io/hoogi91/frankenphp/php:8.3
               ghcr.io/hoogi91/frankenphp/php:latest
 
+          - version: "php8.4"
+            target: "base"
+            tags: ghcr.io/hoogi91/frankenphp/base:8.4
+          - version: "php8.4"
+            tags: ghcr.io/hoogi91/frankenphp/php:8.4
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
