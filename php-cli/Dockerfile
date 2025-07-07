@@ -4,7 +4,7 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 RUN apt -y update && apt -y --no-install-recommends install cron git jq zip wait-for-it ssh \
     && rm -rf /var/lib/apt/lists/* \
     && git config --global --add safe.directory /var/www/app \
-    && install-php-extensions apcu bcmath bz2 calendar decimal exif gd gettext gmp imap intl opcache pcntl pdo_mysql redis soap sockets xdebug-stable xsl zip @composer \
+    && install-php-extensions apcu bcmath bz2 calendar decimal exif gd gettext gmp imap intl opcache opentelemetry pcntl pdo_mysql redis soap sockets xdebug-stable xsl zip @composer \
     && echo "xdebug.mode=debug" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "xdebug.client_host = host.docker.internal" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
     && echo "apc.enabled=1" >> /usr/local/etc/php/conf.d/docker-php-ext-apcu.ini \
