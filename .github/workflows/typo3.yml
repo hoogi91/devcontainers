@@ -18,13 +18,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: 8.1
-            tags: ghcr.io/hoogi91/typo3/php:8.1
-          - version: 8.2
-            tags: ghcr.io/hoogi91/typo3/php:8.2
           - version: 8.3
+            tags: ghcr.io/hoogi91/typo3/php:8.3
+          - version: 8.4
+            tags: ghcr.io/hoogi91/typo3/php:8.4
+          - version: 8.5
             tags: |
-              ghcr.io/hoogi91/typo3/php:8.3
+              ghcr.io/hoogi91/typo3/php:8.5
               ghcr.io/hoogi91/typo3/php:latest
 
     steps:

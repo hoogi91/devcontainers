@@ -20,25 +20,25 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - version: "php8.2"
-            target: "base"
-            tags: ghcr.io/hoogi91/frankenphp/base:8.2
-          - version: "php8.2"
-            tags: ghcr.io/hoogi91/frankenphp/php:8.2
-
           - version: "php8.3"
             target: "base"
             tags: ghcr.io/hoogi91/frankenphp/base:8.3
           - version: "php8.3"
-            tags: |
-              ghcr.io/hoogi91/frankenphp/php:8.3
-              ghcr.io/hoogi91/frankenphp/php:latest
+            tags: ghcr.io/hoogi91/frankenphp/php:8.3
 
           - version: "php8.4"
             target: "base"
             tags: ghcr.io/hoogi91/frankenphp/base:8.4
           - version: "php8.4"
             tags: ghcr.io/hoogi91/frankenphp/php:8.4
+
+          - version: "php8.5"
+            target: "base"
+            tags: ghcr.io/hoogi91/frankenphp/base:8.5
+          - version: "php8.5"
+            tags: |
+              ghcr.io/hoogi91/frankenphp/php:8.5
+              ghcr.io/hoogi91/frankenphp/php:latest
 
     steps:
       - name: Checkout
