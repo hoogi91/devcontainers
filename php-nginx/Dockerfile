@@ -1,4 +1,4 @@
-ARG PHP_VERSION=8.3-fpm-bullseye
+ARG PHP_VERSION=8.3-fpm-trixie
 FROM php:${PHP_VERSION} AS base
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN apt -y update \

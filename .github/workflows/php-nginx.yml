@@ -66,6 +66,6 @@ jobs:
           tags: ${{ matrix.tags }}
           target: ${{ matrix.target }}
           build-args: |
-            PHP_VERSION=${{ matrix.version }}-fpm-bullseye
+            PHP_VERSION=${{ matrix.version }}-fpm-trixie
           cache-from: type=gha
           cache-to: type=gha,mode=max

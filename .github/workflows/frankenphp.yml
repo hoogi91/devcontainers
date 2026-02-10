@@ -36,6 +36,7 @@ jobs:
             target: "base"
             tags: ghcr.io/hoogi91/frankenphp/base:8.5
           - version: "php8.5"
+            imagelib: imagick
             tags: |
               ghcr.io/hoogi91/frankenphp/php:8.5
               ghcr.io/hoogi91/frankenphp/php:latest
@@ -67,5 +68,6 @@ jobs:
           target: ${{ matrix.target }}
           build-args: |
             PHP_VERSION=${{ matrix.version }}-alpine
+            IMAGE_LIB=${{ matrix.imagelib || 'gmagick' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
