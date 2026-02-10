@@ -33,6 +33,7 @@ jobs:
             tags: ghcr.io/hoogi91/frankenphp/php:8.4
 
           - version: "php8.5"
+            imagelib: imagick
             target: "base"
             tags: ghcr.io/hoogi91/frankenphp/base:8.5
           - version: "php8.5"
